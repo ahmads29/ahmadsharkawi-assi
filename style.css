@@ -1,0 +1,391 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+/* Header styles start*/
+header {
+    background-color: gray;
+    padding: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.493);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Center the navbar */
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #f3c600;
+    margin: 2px;
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        background-color: #f9f9f9;
+    }
+
+    .menu.active li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end; 
+    }
+
+    .hamburger.active .line:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .hamburger.active .line:nth-child(2) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .hamburger.active .line:nth-child(3) {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+    }
+}
+
+nav ul {
+    margin: 0;
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+ul a {
+    text-decoration: none;
+    color: rgb(255, 208, 0);
+    font-size: 22px;
+}
+
+ul li {
+    list-style: none;
+    justify-content: space-between;
+}
+
+.shark_link {
+    background-color: rgb(255, 217, 0);
+    padding: 7px 10px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 0 8px yellow;
+}
+
+.shark_link:hover {
+    background-color: #ffee00;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.281);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: right; 
+    }
+    .shark_link{
+        background-color: rgba(255, 217, 0, 0);
+        /* padding: 7px 10px; */
+        /* border-radius: 5px; */
+        color: white;
+        box-shadow: 0 0 8px rgba(255, 255, 0, 0);
+    }
+    .menu li a {
+        text-decoration: none;
+        color: #000000;
+    }
+}
+/* Header styles end*/
+
+/* Particle back-animation css start */
+.particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background-color: #ffd900;
+    width: 8px;
+    height: 4px;
+    border-radius: 50%;
+    animation: moveParticle linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveParticle {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(100vw, 100vh);
+    }
+}
+/* Particle back-animation css end */
+
+
+/* Registration form css start */
+.shark_container {
+    width: 90%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #ffffffcb;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.452);
+    position: relative;
+    z-index: 43;
+}
+
+.shark_register {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #464646;
+}
+
+.shark_form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #636363;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1cece;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #ffa500;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffc400;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff8c00;
+}
+
+/* media queries for responsiveness */
+@media only screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    ul a {
+        margin: 10px 0;
+    }
+
+    .shark_container {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+/* Registration form css end */
+
+/*body general styling start*/
+/* Container css */
+.shark_container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+/* Welcome page styles */
+.shark_wlc_page {
+    background-color: grey; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    border: 1px solid white; 
+    text-align: center;
+}
+
+.shark_wlc_page img {
+    max-width: 100%; 
+    border-radius: 10px; 
+    margin-bottom: 10px; 
+}
+
+.shark_wlc_page h2 {
+    margin-bottom: 10px; 
+    letter-spacing: 1px; /
+}
+
+/* Features section css */
+.shark_features {
+    background-color: grey; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    border: 1px solid white; 
+}
+
+.shark_features h2 {
+    margin-bottom: 10px; 
+}
+
+.shark_features p {
+    font-size: 20px; 
+}
+
+.shark_features ul {
+    padding-left: 0; 
+}
+
+.shark_features li {
+    list-style: none; 
+    margin-bottom: 5px; 
+}
+
+/* Table css */
+.shark_table {
+    background-color: grey; 
+    padding: 20px;
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid white; 
+}
+
+.shark_table table {
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.shark_table th, .shark_table td {
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: left; 
+    background-color: rgba(255, 255, 255, 0.356); 
+}
+
+.shark_table th {
+    background-color: #ffc400; 
+}
+
+/* Footer css */
+footer {
+    text-align: center; 
+    padding: 20px 0; 
+    background-color: #333; 
+    color: #fff; 
+}
+
+/*body general styling end*/
+
+
+/* Scrollbar Start */
+::-webkit-scrollbar {
+    height: 3px;
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffee00;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #dddddd;
+}
+/* Scrollbar End */
+
+
+
+
+
+
+
+
+
