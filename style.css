@@ -266,16 +266,19 @@ button:hover {
 
 /*body general styling start*/
 /* Container css */
+
 .shark_container1 {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     justify-content: space-around;
+    z-index: 45;
 }
 
 /* Welcome page styles */
 .shark_wlc_page {
-    background-color: grey; 
+    background-color: #808080a6; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -298,7 +301,7 @@ button:hover {
 
 /* Features section css */
 .shark_features {
-    background-color: grey; 
+    background-color: #808080a6; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -326,7 +329,7 @@ button:hover {
 
 /* Table css */
 .shark_table {
-    background-color: grey; 
+    background-color:  #808080a6; 
     padding: 20px;
     margin-top: 20px; 
     margin-bottom: 20px;
